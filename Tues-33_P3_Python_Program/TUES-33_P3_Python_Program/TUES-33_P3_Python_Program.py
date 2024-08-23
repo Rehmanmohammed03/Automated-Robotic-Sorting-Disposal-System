@@ -27,7 +27,6 @@ bot = qbot(speed)
 ## STUDENT CODE BEGINS
 ##---------------------------------------------------------------------------------------
 
-#Zareen and Sude
 #this function dispenses the bottles onto the servo table
 def dispense_container():
     bottle = random.randint(1,6)                            #a random container through 1-6 is chosen
@@ -35,7 +34,6 @@ def dispense_container():
     my_table.dispense_container()                           #and dispensed (as well as returned)    
     return c_type
 
-#Zareen and Sude
 #this function loads the container onto the Q-bot using the Q-arm
 def load_container(counter):
     net_weight = 0
@@ -80,7 +78,6 @@ def load_container(counter):
     return p_bin_num                                        #returns the first bin number
 
 
-#Zareen and Sude
 #this function transfers containers using bin_num while approaching the appropriate bin whilst following the trajectory of a line
 def transfer_container(bin_num):
     bot.rotate(180)
@@ -102,14 +99,12 @@ def transfer_container(bin_num):
                 return
             print(bin_num , reading)
 
-#Zareen and Sude                    
 #this function deposits the container into the designated bin
 def deposit_container():                                    
     time.sleep(2)     
     bot.activate_actuator()                                 #activates the actuator to deposit the containers
     bot.dump()                                              #dumps the container
     
-#Zareen and Sude
 #this function returns both the Q-arm and Q-bot to their appropriate home positions
 def return_home():
     arm.home()
@@ -120,7 +115,6 @@ def return_home():
         print(lost_line)
     bot.stop()                                              #stops at home position :)
 
-#Zareen and Sude
 #this function is the main function (all the other functions are called within it)
 def main():
     counter = 0                                             #the variable counts how many times the simulation runs           
